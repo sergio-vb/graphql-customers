@@ -10,7 +10,7 @@
       "id": "2",
       "name": "Steve Smith",
       "email": "steves@gmail.com",
-      "age": 25
+      "age": 27
     },
     {
       "id": "3",
@@ -25,16 +25,10 @@
       "age": 57
     },
     {
-      "id": "3",
-      "name": "Jen Gardner",
-      "email": "jeng@gmail.com",
-      "age": 35
-    },
-    {
-      "name": "James Green",
-      "email": "jamesg@gmail.com",
       "age": 27,
-      "id": "S1APCgruW"
+      "id": "5",
+      "name": "Jen Gardner",
+      "email": "jeng@gmail.com"
     }
   ]
 }

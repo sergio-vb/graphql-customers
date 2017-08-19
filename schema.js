@@ -88,7 +88,33 @@ const mutation = new GraphQLObjectType({
                     name: args.name,
                     email: args.email,
                     age: args.age
-                }).then(res => res.data);
+                }).then(res => {
+                    console.log("Post response:", res);
+                    return res.data
+                });
+            }
+        },
+        deleteCustomer:{
+            type:CustomerType,
+            args:{
+                id: {type: new GraphQLNonNull(GraphQLString)}
+            },
+            resolve(parentValue, args){
+                return axios.delete('http://localhost:3000/customers/' + args.id)
+                    .then(res => res.data);
+            }
+        },
+        editCustomer:{
+            type:CustomerType,
+            args:{
+                id: {type: new GraphQLNonNull(GraphQLString)},
+                name: {type: GraphQLString},
+                email: {type: GraphQLString},
+                age: {type: GraphQLInt}
+            },
+            resolve(parentValue, args){
+                return axios.patch('http://localhost:3000/customers/' + args.id, args)
+                    .then(res => res.data);
             }
         }
     }
